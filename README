@@ -1,0 +1,35 @@
+BSE-Stock Quotes repository contains a "stockQuote" which is a Python Script. It is basically for my own personal use but it might help other people too who are working on a similar cause.
+Usually Bombay Stock Exchange(BSE) provides Historical Data of its Stocks for regular one time online viewing unlike other Yahoo! Finance or Google Finance which allows to Download the Historical Data in .csv or .xls format. As BSE official site doesn't allow to download the data directly, i have created this Python Script (stockQuote) which would directly parse the data from BSE and store it in "Output.txt" (which is stored in the current directory from where the code is executed) which can be imported to form a SpreadSheet. I have attached an Output.txt format too for reference.
+
+So why this code and not direct download from Y! Finance??
+-> BSE official site provides comparatively more attributes and also is Official.
+Example: 
+Yahoo! Finance Site: http://in.finance.yahoo.com/q/hp?s=BHEL.BO  	(Downloadable Spreadsheet at the end of the Page)
+
+Bombay Stock Exchange site: http://www.bseindia.com/histdata/stockprc2.asp?main1=500103&fdate=13&fmonth=8&fyear=2011&main2=1&default1=1		(No Downloadable spreadsheet and also more no. of Attributes comparatively)
+
+
+Some Facts about BSE historical data Format - 
+1. It provides approx. 20-22 Instances on every call which is the number of days BSE was open.
+2. It requires the Scrip Code of the stock required. Link for scripCode for major Companies -> http://sameerbloggs.blogspot.com/2009/03/list-of-bse-30-stocks-with-scrip-code_274.html
+3. It requires start date, month and year as its parameters.
+4. If the date provided is close to 20 minus date to the present date we could get present stock quote too. 
+
+How to excute:
+1. Download .zip or .tar.gz format.
+2. Extract and copy "stockQuote.py" in the current directory.
+3. Run in IDLE/Interpreter etc: 
+>>> import stockQuote
+>>> stockQuote.stockQuote(500010,1,9,2010)
+    http://www.bseindia.com/histdata/stockprc2.asp?main1=500010&fdate=1&fmonth=9&fyear=2010&main2=1&default1=1
+
+Url link of desired stock data for particular date will be returned. Like in this case for scripCode = 500010 and date= 1/9/2010 is returned.
+( You can avoid this my Commenting Line No: 25)
+
+Why the trouble :P?
+->I had made this to create my own Data Set of Stock Quotes for different companies and store them. 
+
+Hope it helps you too in some way ;-).
+
+
+   
