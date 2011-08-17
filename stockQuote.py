@@ -23,29 +23,29 @@ def stockQuote(scripCode,fdate,fmonth,fyear):
     companyName = companyNameAttributes.nodeValue
     link = "http://www.bseindia.com/histdata/stockprc2.asp?main1=%d" % scripCode+"&fdate=%d" %fdate+"&fmonth=%d"%fmonth+"&fyear=%d"%fyear+"&main2=1&default1=1"
     print link
-    og = urllib.urlopen(link)
-    og = og.read()
-    e = open('Test.txt','w')
-    e.write(og)
-    e.close()
-    f = open('Test.txt','r')
-    for line in f.readlines():
+    orignalPsourceObj = urllib.urlopen(link)
+    orignalPsource = orignalPsourceObj.read()
+    file = open('Test.txt','w')
+    file.write(orignalPsource)
+    file.close()
+    file = open('Test.txt','r')
+    for line in file.readlines():
         line = line.strip()
         txt = "<td align=left width=100px valign=bottom bgcolor=#e6eef1><font face=Arial size=2 color=#ic355d>"
         bool = txt in line
         if  bool == True:
-            file = open('Test.txt','w')
-            file.write(line)
-            file.close()
-        f.close() 
-    g = open('Test.txt','r')
-    text = g.read()
+            file1 = open('Test.txt','w')
+            file1.write(line)
+            file1.close()
+        file.close() 
+    modifiedPsourceObj = open('Test.txt','r')
+    text = modifiedPsourceObj.read()
     text = text.strip()
     p = string.replace(text,'<tr><td align=left width=100px valign=bottom bgcolor=#e6eef1><font face=Arial size=2 color=#ic355d>','%s,'%companyName)
     q = string.replace(p,'&nbsp;</font></td><td align=right valign=bottom bgcolor=#e6eef1><font face=Arial size=2 color=#ic355d>',',')
     r = string.replace(q,'&nbsp;</font></td></tr>','\n')
-    t = open('Output.txt','a')
-    g.close()
-    t.write(r)
-    t.close()
+    modifiedPsourceObj.close()
+    output = open('Output.txt','a')
+    output.write(r)
+    output.close()
     os.remove('Test.txt')  
