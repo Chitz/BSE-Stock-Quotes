@@ -17,14 +17,19 @@ Some Facts about BSE historical data Format -
 
 How to excute:
 1. Download .zip or .tar.gz format.
+For using it in Interpreter:
 2. Extract and copy "stockQuote.py" in the current directory.
 3. Run in IDLE/Interpreter etc: 
 >>> import stockQuote
 >>> stockQuote.stockQuote(500010,1,9,2010)
     http://www.bseindia.com/histdata/stockprc2.asp?main1=500010&fdate=1&fmonth=9&fyear=2010&main2=1&default1=1
+For using it via Command Line Interface:
+2. Extract and copy "stockQuoteCLI.py" in the current directory.
+3. On your Command Line Interpreter to your Directory where stockQuoteCLI.py is stored: 
+python stockQuoteCLI.py 500103 1 7 2010
+http://www.bseindia.com/histdata/stockprc2.asp?main1=500103&fdate=1&fmonth=7&fyear=2010&main2=1&default1=1
 
 Url link of desired stock data for particular date will be returned. Like in this case for scripCode = 500010 and date= 1/9/2010 is returned.
-( You can avoid this my Commenting Line No: 25)
 
 Why the trouble :P?
 ->I had made this to create my own Data Set of Stock Quotes for different companies and store them. 
