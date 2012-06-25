@@ -37,7 +37,6 @@ def stockQuote(scripCode,fdate,fmonth,fyear):
             file1 = open('Test.txt','w')
             file1.write(line)
             file1.close()
-        file.close() 
     modifiedPsourceObj = open('Test.txt','r')
     text = modifiedPsourceObj.read()
     text = text.strip()
