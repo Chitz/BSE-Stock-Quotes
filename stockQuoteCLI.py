@@ -28,8 +28,7 @@ for line in file.readlines():
     if  bool == True:
         file1 = open('Test.txt','w')
         file1.write(line)
-        file1.close()
-    file.close() 
+        file1.close() 
 modifiedPsourceObj = open('Test.txt','r')
 text = modifiedPsourceObj.read()
 text = text.strip()
